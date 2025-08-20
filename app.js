@@ -12,6 +12,7 @@ lista y se mostrará en la página.
 
 let amigoSecreto = [];
 const listaAmigo = document.getElementById("listaAmigos");
+const resultado = document.getElementById("resultado");
 
 function agregarAmigo(){
     const inputAmigo = document.getElementById("amigo");
@@ -24,7 +25,6 @@ function agregarAmigo(){
         inputAmigo.value="";
         
     }
-    console.log(amigoSecreto);
     mostrarLista(amigoSecreto);
 }
 
@@ -36,6 +36,11 @@ function mostrarLista(datos) {
       });
 }
 
-
+function sortearAmigo(){
+    let limiteDeNombres = amigoSecreto.length;
+    let sorteo = Math.floor(Math.random() * limiteDeNombres);
+    listaAmigo.textContent = "";
+    resultado.textContent = `La persona seleccionada es ${amigoSecreto[sorteo]}`;
+}
 
 
